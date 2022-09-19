@@ -2,9 +2,10 @@ const puppeteer = require("puppeteer");
 const download = require("image-downloader");
 
 (async() => {
-	const brower = await puppeteer.launch({product:"firefox", dumpio: true});
+	const URL = ""
+	const brower = await puppeteer.launch();
 	const page = await brower.newPage();
-	await page.goto("");
+	await page.goto(URL);
 	await new Promise(item => setTimeout(item, 10000))
 	const articles = await page.evaluate(() => {
 		let titleLinks = document.querySelectorAll("._aagv > img");
